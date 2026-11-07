@@ -1,0 +1,226 @@
+/* ==========================================================
+   Atlas Kembaran — token desain & gaya global
+   ========================================================== */
+:root {
+  /* Warna (dari desain) */
+  --ink: #0f1d17;
+  --ink-2: #1b2a22;
+  --forest: #1f4d3a;
+  --cream: #f3eee2;
+  --amber: #e3a72f;
+  --terra: #c4572e;
+  --terra-teks: #b04b25; /* terracotta lebih gelap untuk teks kecil di atas krem (kontras AA) */
+  --sage: #6b8f5e;
+  --sage-lt: #9fb99a;
+  --sky: #7fa6c4;
+  --mist: #dce5da;
+  --muted: #4d6455;
+  --soft: #cfd9cf;
+  --line: #d9dfd3;
+
+  /* Tipografi */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-label: 'Space Grotesk', system-ui, sans-serif;
+
+  /* Tata letak */
+  --gutter: 48px;
+  --pad-x: max(var(--gutter), calc((100% - 1344px) / 2));
+  --sec-y: 96px;
+
+  --h2-size: clamp(34px, 5vw, 60px);
+
+  color-scheme: dark;
+  font-family: var(--font-body);
+  background: var(--ink);
+  color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --gutter: 32px;
+    --sec-y: 72px;
+  }
+}
+@media (max-width: 639px) {
+  :root {
+    --gutter: 20px;
+    --sec-y: 56px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Fokus keyboard terlihat di latar terang maupun gelap */
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--amber);
+}
+
+/* Lompat ke konten */
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -80px;
+  z-index: 100;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--amber);
+  color: var(--ink);
+  font-weight: 700;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Struktur section */
+.sec {
+  padding: var(--sec-y) var(--pad-x);
+}
+.sec--cream {
+  background: var(--cream);
+  color: var(--ink-2);
+}
+.sec--ink {
+  background: var(--ink);
+  color: var(--cream);
+}
+.sec--forest {
+  background: var(--forest);
+  color: var(--cream);
+}
+.sec--terra {
+  background: var(--terra);
+  color: var(--cream);
+}
+.sec--joined {
+  padding-top: 0;
+}
+
+/* Kop section */
+.eyebrow {
+  margin-bottom: 10px;
+  font-family: var(--font-label);
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra-teks);
+}
+.sec--ink .eyebrow,
+.sec--forest .eyebrow {
+  color: var(--amber);
+}
+.sec--terra .eyebrow {
+  color: var(--ink);
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--h2-size);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.sec-head {
+  margin-bottom: 36px;
+}
+.sec-head .h2 {
+  max-width: 820px;
+}
+
+/* Tombol umum */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+  transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+main:focus {
+  outline: none;
+  box-shadow: none;
+}

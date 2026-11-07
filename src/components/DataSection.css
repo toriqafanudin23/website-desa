@@ -1,0 +1,226 @@
+.data__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.data__kartu {
+  min-width: 0;
+  border-radius: 28px;
+}
+
+.data__penduduk {
+  grid-column: span 5;
+  min-height: 260px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--forest);
+  color: var(--cream);
+}
+.data__luas {
+  grid-column: span 4;
+  min-height: 260px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--amber);
+  color: var(--ink-2);
+}
+.data__batas {
+  grid-column: span 3;
+  min-height: 260px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.data__label {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.data__label--amber {
+  color: var(--amber);
+}
+.data__label--muted {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.data__angka {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+.data__angka--besar {
+  font-size: clamp(56px, 7vw, 96px);
+}
+.data__angka--sedang {
+  font-size: clamp(44px, 4.4vw, 64px);
+}
+.data__ket {
+  font-size: 15px;
+}
+.data__penduduk .data__ket {
+  color: #cfe0d3;
+}
+
+.data__batas-ket {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.data__kerja {
+  grid-column: span 7;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.data__fasil {
+  grid-column: span 5;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--mist);
+}
+
+.data__judul-kecil {
+  margin: 0 0 20px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.data__judul-kecil--hijau {
+  margin: 0;
+  color: var(--forest);
+}
+
+.data__batang-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.data__batang-baris {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.data__batang-nama {
+  flex: none;
+  width: 140px;
+  font-weight: 600;
+  font-size: 15px;
+}
+.data__batang-jalur {
+  flex: 1;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e6ebe1;
+}
+.data__batang-isi {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.data__batang-nilai {
+  flex: none;
+  width: 56px;
+  text-align: right;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--terra-teks);
+}
+.data__catatan {
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.data__fasil-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.data__fasil-item {
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--cream);
+}
+.data__fasil-angka {
+  font-family: var(--font-label);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--forest);
+}
+.data__fasil-label {
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+@media (max-width: 1099px) {
+  .data__penduduk {
+    grid-column: span 12;
+    min-height: 220px;
+  }
+  .data__luas {
+    grid-column: span 7;
+  }
+  .data__batas {
+    grid-column: span 5;
+  }
+  .data__kerja,
+  .data__fasil {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 639px) {
+  .data__luas,
+  .data__batas {
+    grid-column: span 12;
+  }
+  .data__kartu {
+    border-radius: 24px;
+  }
+  .data__penduduk,
+  .data__luas {
+    padding: 28px;
+    min-height: 200px;
+  }
+  .data__kerja,
+  .data__fasil {
+    padding: 24px;
+  }
+  .data__batang-baris {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+  .data__batang-nama {
+    width: auto;
+    flex: 1;
+  }
+  .data__batang-jalur {
+    order: 3;
+    flex-basis: 100%;
+  }
+}
